@@ -1,0 +1,10 @@
+# Development dependencies
+pytest>=7.0
+pytest-cov
+black
+isort
+flake8
+mypy
+
+# Main dependencies
+anthropic>=0.18.0

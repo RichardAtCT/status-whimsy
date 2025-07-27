@@ -5,11 +5,9 @@
 1. Create accounts:
    - GitHub account (if you don't have one)
    - PyPI account: https://pypi.org/account/register/
-   - TestPyPI account: https://test.pypi.org/account/register/
 
-2. Generate API tokens:
+2. Generate API token:
    - PyPI: Account settings → API tokens → Add API token
-   - TestPyPI: Account settings → API tokens → Add API token
 
 ## GitHub Setup
 
@@ -27,14 +25,13 @@
    git add .
    git commit -m "Initial commit: status_whimsy library"
    git branch -M main
-   git remote add origin https://github.com/richardatkinson/status-whimsy.git
+   git remote add origin https://github.com/RichardAtCT/status-whimsy.git
    git push -u origin main
    ```
 
-3. Add secrets to GitHub repository:
+3. Add secret to GitHub repository:
    - Go to Settings → Secrets and variables → Actions
    - Add new repository secret: `PYPI_API_TOKEN` (your PyPI token)
-   - Add new repository secret: `TEST_PYPI_API_TOKEN` (your TestPyPI token)
 
 ## Local Testing
 
@@ -56,7 +53,7 @@
    mypy status_whimsy
    ```
 
-## Build and Test Upload
+## Build and Upload
 
 1. Install build tools:
    ```bash
@@ -73,24 +70,12 @@
    twine check dist/*
    ```
 
-4. Upload to TestPyPI first:
-   ```bash
-   twine upload --repository testpypi dist/*
-   ```
-
-5. Test installation from TestPyPI:
-   ```bash
-   pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ status-whimsy
-   ```
-
-## Final PyPI Upload
-
-1. If TestPyPI works, upload to PyPI:
+4. Upload to PyPI:
    ```bash
    twine upload dist/*
    ```
 
-2. Test installation:
+5. Test installation:
    ```bash
    pip install status-whimsy
    ```

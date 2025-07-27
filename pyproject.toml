@@ -32,10 +32,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/richardatkinson/status-whimsy"
-Documentation = "https://github.com/richardatkinson/status-whimsy#readme"
-Repository = "https://github.com/richardatkinson/status-whimsy"
-Issues = "https://github.com/richardatkinson/status-whimsy/issues"
+Homepage = "https://github.com/RichardAtCT/status-whimsy"
+Documentation = "https://github.com/RichardAtCT/status-whimsy#readme"
+Repository = "https://github.com/RichardAtCT/status-whimsy"
+Issues = "https://github.com/RichardAtCT/status-whimsy/issues"
 
 [project.optional-dependencies]
 dev = [

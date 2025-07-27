@@ -197,7 +197,7 @@ The library is extremely cost-effective due to Haiku's low pricing and the minim
 
 ```bash
 # Clone the repository
-git clone https://github.com/richardatkinson/status-whimsy.git
+git clone https://github.com/RichardAtCT/status-whimsy.git
 cd status-whimsy
 
 # Install in development mode
@@ -244,4 +244,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/richardatkinson/status-whimsy/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/RichardAtCT/status-whimsy/issues) on GitHub.

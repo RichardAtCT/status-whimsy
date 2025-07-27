@@ -83,7 +83,12 @@ Respond with ONLY the transformed status, no explanations."""
                 messages=[{"role": "user", "content": prompt}],
             )
 
-            return response.content[0].text.strip()
+            # Handle the response content properly
+            content = response.content[0]
+            if hasattr(content, "text"):
+                return content.text.strip()
+            else:
+                raise Exception("Unexpected response format from API")
 
         except Exception as e:
             raise Exception(f"Failed to generate whimsical status: {str(e)}")

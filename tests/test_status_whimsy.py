@@ -41,7 +41,7 @@ class TestStatusWhimsy:
             with pytest.raises(ValueError, match="Whimsicalness must be between 1 and 10"):
                 client.generate("test", whimsicalness=11)
 
-    @patch("anthropic.Anthropic")
+    @patch("status_whimsy.core.Anthropic")
     def test_generate_success(self, mock_anthropic):
         """Test successful generation."""
         # Mock the API response
@@ -57,7 +57,7 @@ class TestStatusWhimsy:
         assert result == "The server is dancing! 🎉"
         mock_client.messages.create.assert_called_once()
 
-    @patch("anthropic.Anthropic")
+    @patch("status_whimsy.core.Anthropic")
     def test_batch_generate(self, mock_anthropic):
         """Test batch generation."""
         # Mock the API responses
@@ -76,7 +76,7 @@ class TestStatusWhimsy:
         assert results == ["Response 1", "Response 2", "Response 3"]
         assert mock_client.messages.create.call_count == 3
 
-    @patch("anthropic.Anthropic")
+    @patch("status_whimsy.core.Anthropic")
     def test_temperature_scaling(self, mock_anthropic):
         """Test that temperature scales with whimsicalness."""
         mock_client = Mock()
@@ -98,7 +98,7 @@ class TestStatusWhimsy:
             expected_temp = 0.7 + (whimsy * 0.03)
             assert temperature == pytest.approx(expected_temp)
 
-    @patch("anthropic.Anthropic")
+    @patch("status_whimsy.core.Anthropic")
     def test_whimsify_function(self, mock_anthropic):
         """Test the whimsify convenience function."""
         mock_client = Mock()
